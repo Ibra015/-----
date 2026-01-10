@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم | صالون المحترف</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body class="admin-body">
+    <!-- الشريط الجانبي -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo-icon">✂️</div>
+            <span class="logo-text">لوحة التحكم</span>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="sidebar-link active" data-page="dashboard">
+                <span class="link-icon">📊</span>
+                <span>الرئيسية</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="bookings">
+                <span class="link-icon">📅</span>
+                <span>الحجوزات</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="finance">
+                <span class="link-icon">💰</span>
+                <span>الحسابات</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="inventory">
+                <span class="link-icon">📦</span>
+                <span>المخزون</span>
+            </a>
+            <a href="#" class="sidebar-link" data-page="loyalty">
+                <span class="link-icon">⭐</span>
+                <span>الولاء</span>
+            </a>
+            <!-- عرض الخدمة يمكن أن يكون ضمن الإعدادات أو صفحة منفصلة مستقبلاً -->
+        </nav>
+
+        <div class="sidebar-footer" style="padding: 20px;">
+            <a href="../index.html" class="btn btn-outline" style="width: 100%; text-align: center; display: block;">
+                🚪 خروج للموقع
+            </a>
+        </div>
+    </aside>
+
+    <!-- المحتوى الرئيسي -->
+    <main class="admin-main">
+        <!-- الهيدر -->
+        <header class="admin-header">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <h1 class="page-title" id="pageTitle">الرئيسية</h1>
+            <div class="header-actions">
+                <button onclick="exportToCSV()" class="btn-outline"
+                    style="font-size:0.8rem; padding:8px 15px; border-radius:10px;">📄 تصدير تقرير</button>
+                <span class="current-date" id="currentDate">--/--/----</span>
+            </div>
+        </header>
+
+        <!-- DASHBOARD PAGE -->
+        <section class="admin-page active" id="dashboardPage">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <div class="stat-icon">📅</div>
+                        <h3 id="todayBookings">0</h3>
+                        <p>حجوزات اليوم</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <div class="stat-icon">💵</div>
+                        <h3 id="todayIncome">0 ج.م</h3>
+                        <p>إيرادات اليوم</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <div class="stat-icon">📈</div>
+                        <h3 id="activeClients">--</h3>
+                        <p>صافي الربح</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Recent Bookings -->
+                <div class="dashboard-card">
+                    <h3
+                        style="margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;">
+                        📌 آخر الحجوزات
+                    </h3>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>العميل</th>
+                                    <th>الوقت</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody id="todayBookingsList"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Quick Actions / Offers Management -->
+                <div class="dashboard-card">
+                    <h3>🔥 إدارة العروض الحالية</h3>
+                    <p style="color:#888; font-size:0.9rem; margin-bottom:15px;">انشر عرضاً خاصاً سيظهر للعملاء</p>
+
+                    <form id="offerForm" style="display:flex; flex-direction:column; gap:10px; margin-bottom:15px;">
+                        <input type="text" id="offerTitle" placeholder="العنوان (مثلاً: خصم 20%)" class="form-input">
+                        <div style="display:flex; gap:10px;">
+                            <input type="number" id="offerPrice" placeholder="السعر" class="form-input">
+                            <button type="submit" class="btn btn-primary" style="flex:1;">نشر</button>
+                        </div>
+                    </form>
+
+                    <div id="activeOffersList"
+                        style="max-height:150px; overflow-y:auto; border-top:1px solid rgba(255,255,255,0.1); padding-top:10px;">
+                        <!-- Offers List -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKINGS PAGE -->
+        <section class="admin-page" id="bookingsPage">
+            <div class="page-header">
+                <h2>كافة الحجوزات</h2>
+                <div class="filter-group">
+                    <input type="date" class="form-input" style="max-width: 200px;">
+                    <select class="form-input" style="max-width: 150px;">
+                        <option>الكل</option>
+                        <option>مؤكد</option>
+                        <option>ملغي</option>
+                    </select>
+                </div>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>العميل</th>
+                            <th>التاريخ</th>
+                            <th>الخدمة</th>
+                            <th>السعر</th>
+                            <th>الحالة</th>
+                            <th>تواصل</th>
+                            <th>إجراء</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bookingsTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- FINANCE PAGE -->
+        <section class="admin-page" id="financePage">
+            <!-- Main container for finance content -->
+        </section>
+
+        <!-- INVENTORY PAGE -->
+        <section class="admin-page" id="inventoryPage">
+            <div class="page-header">
+                <h2>📦 إدارة المخزون</h2>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <h4>إضافة صنف جديد</h4>
+                    <form id="inventoryForm" style="margin-top:20px; display:flex; gap:10px;">
+                        <input type="text" id="invItem" placeholder="اسم الصنف" class="form-input" required>
+                        <input type="number" id="invQty" placeholder="الكمية" class="form-input" style="width:100px;"
+                            required>
+                        <button type="submit" class="btn btn-primary">حفظ</button>
+                    </form>
+                </div>
+                <div class="dashboard-card">
+                    <h4>تنبيهات النقص</h4>
+                    <div id="invAlerts" style="margin-top:10px;"></div>
+                </div>
+            </div>
+
+            <div class="table-container" style="margin-top:20px;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>الصنف</th>
+                            <th>الكمية الحالية</th>
+                            <th>الحالة</th>
+                            <th>تحديث</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- LOYALTY PAGE -->
+        <section class="admin-page" id="loyaltyPage">
+            <div class="page-header">
+                <h2>⭐ المتصدرين (نظام الولاء)</h2>
+                <p style="color:#aaa;">كل 100 نقطة = قصة مجانية</p>
+            </div>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>العميل</th>
+                            <th>رقم الهاتف</th>
+                            <th>عدد الزيارات</th>
+                            <th>مجموع النقاط</th>
+                            <th>المكافأة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="loyaltyTableBody"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/app.js"></script>
+    <script src="../js/admin.js"></script>
+    <script>
+        // Init Date
+        document.getElementById('currentDate').innerText = new Date().toLocaleDateString('ar-EG');
+
+        // Mobile Toggle logic handled in existing scripts? 
+        // Let's add ensuring it works inline just in case
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

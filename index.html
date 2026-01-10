@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="صالون المحترف للحلاقة الرجالية - الصالحية الجديدة. خدمات حلاقة احترافية وتجربة فخامة لا مثيل لها.">
+    <title>صالون المحترف | تجربة الفخامة</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#D4AF37">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <!-- Tilt.js for 3D vibes -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-scissors">✂️</div>
+            <div class="loader-text">صالون المحترف</div>
+            <div class="loader-progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="header glass-bg">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <div class="logo-icon-wrapper">
+                    <img src="assets/images/scissors-3d.png" alt="Logo" class="logo-img floating">
+                </div>
+                <div class="logo-text">
+                    <span class="brand-name">المحترف</span>
+                    <span class="brand-sub">LUXURY BARBER</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                <li><a href="#services" class="nav-link">الخدمات</a></li>
+                <li><a href="#gallery" class="nav-link">المعرض</a></li>
+                <li><a href="#booking" class="nav-link">حجز موعد</a></li>
+                <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+            </ul>
+
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="assets/images/hero-bg.png" alt="Luxury Barbershop" class="hero-bg-img" data-tilt data-tilt-max="3"
+                data-tilt-speed="400">
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content container">
+            <div class="hero-text" data-tilt data-tilt-max="5">
+                <div class="hero-badge">✨ تجربة، وليست مجرد حلاقة</div>
+                <h1>أناقتك في <br><span class="text-gold">بعدٍ آخر</span></h1>
+                <p>استمتع بخدمات الحلاقة الراقية في أجواء من الفخامة والخصوصية بمدينة الصالحية الجديدة.</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn btn-gold glow-effect">احجز موعدك الآن</a>
+                    <a href="#services" class="btn btn-outline glass-effect">اكتشف خدماتنا</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Floating Elements placed via CSS/JS -->
+                <img src="assets/images/tools-3d.png" class="floating-tool t1" alt="Tools">
+            </div>
+        </div>
+        <div class="scroll-down">
+            <span>اكتشف المزيد</span>
+            <div class="arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="sub-title">خدماتنا</span>
+                <h2>فن الحلاقة <span class="text-gold">الاحترافي</span></h2>
+            </div>
+
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card glass-card" data-tilt data-tilt-glare data-tilt-max-glare="0.5">
+                    <div class="card-icon">✂️</div>
+                    <h3>قص شعر كلاسيكي</h3>
+                    <p>أناقة لا تبلى مع قصات كلاسيكية تناسب جميع المناسبات.</p>
+                    <div class="price">80 ج.م</div>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card glass-card featured" data-tilt data-tilt-scale="1.05">
+                    <div class="card-badge">الأكثر طلباً</div>
+                    <div class="card-icon">💇‍♂️</div>
+                    <h3>قص شعر عصري (Fade)</h3>
+                    <p>أحدث صيحات الموضة العالمية، فيد، وتدريجات احترافية.</p>
+                    <div class="price text-gold">100 ج.م</div>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card glass-card" data-tilt>
+                    <div class="card-icon">🪒</div>
+                    <h3>حلاقة ملكية</h3>
+                    <p>حلاقة ذقن بالموس مع فوطة ساخنة وماسك ترطيب.</p>
+                    <div class="price">60 ج.م</div>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card glass-card" data-tilt>
+                    <div class="card-icon">💆‍♂️</div>
+                    <h3>عناية متكاملة</h3>
+                    <p>تنظيف بشرة، ماسك فحم، ومساج للوجه والرأس.</p>
+                    <div class="price">150 ج.م</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery" id="gallery">
+        <div class="container">
+            <div class="section-head text-center">
+                <span class="sub-title">أعمالنا</span>
+                <h2>معرض <span class="text-gold">الإبداع</span></h2>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-1.png" alt="Style 1">
+                    <div class="gallery-overlay">
+                        <h4>قصة عصرية</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-2.png" alt="Style 2">
+                    <div class="gallery-overlay">
+                        <h4>تحديد ذقن</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery-3.png" alt="Style 3">
+                    <div class="gallery-overlay">
+                        <h4>Skin Fade</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/client-1.png" alt="Client">
+                    <div class="gallery-overlay">
+                        <h4>تجهيز عريس</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section booking" id="booking">
+        <div class="booking-bg"></div>
+        <div class="container">
+            <div class="booking-wrapper glass-panel">
+                <div class="booking-head text-center">
+                    <h2>احجز موعدك <span class="text-gold">الآن</span></h2>
+                    <p>اختر الوقت الذي يناسبك ودعنا نهتم بإطلالتك</p>
+                </div>
+
+                <div class="booking-wizard">
+                    <!-- Progress -->
+                    <div class="wizard-progress">
+                        <div class="step active" data-step="1">1. البيانات</div>
+                        <div class="step" data-step="2">2. الحلاق</div>
+                        <div class="step" data-step="3">3. الخدمات</div>
+                        <div class="step" data-step="4">4. الموعد</div>
+                    </div>
+
+                    <!-- Steps -->
+                    <form id="bookingForm" class="wizard-form">
+                        <!-- Step 1 -->
+                        <div class="wizard-step active" id="step1">
+                            <h3>بياناتك الشخصية</h3>
+                            <div class="form-group">
+                                <label>الاسم الكامل</label>
+                                <input type="text" class="form-control" placeholder="أدخل اسمك" required>
+                            </div>
+                            <div class="form-group">
+                                <label>رقم الهاتف</label>
+                                <input type="tel" class="form-control" placeholder="01xxxxxxxxx" required>
+                            </div>
+                            <button type="button" class="btn btn-gold next-step">التالي</button>
+                        </div>
+
+                        <!-- Step 2 (Barber Selection) -->
+                        <div class="wizard-step" id="step2">
+                            <h3>اختر أخصائي الحلاقة</h3>
+                            <div class="services-select-grid"
+                                style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+                                <!-- Barber 1 -->
+                                <label class="service-option-card">
+                                    <input type="radio" name="barber" value="أحمد" checked>
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <img src="assets/images/barber-1.png"
+                                            style="width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);">
+                                        <span class="opt-title">الأسطى أحمد</span>
+                                        <span class="opt-price" style="font-size:0.8rem; color:#888;">خبرة 10
+                                            سنوات</span>
+                                    </div>
+                                </label>
+                                <!-- Barber 2 -->
+                                <label class="service-option-card">
+                                    <input type="radio" name="barber" value="محمد">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <img src="assets/images/barber-2.png"
+                                            style="width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);">
+                                        <span class="opt-title">الأسطى محمد</span>
+                                        <span class="opt-price" style="font-size:0.8rem; color:#888;">خبير
+                                            التدريج</span>
+                                    </div>
+                                </label>
+                                <!-- Barber 3 -->
+                                <label class="service-option-card">
+                                    <input type="radio" name="barber" value="علي">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <img src="assets/images/barber-3.png"
+                                            style="width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid var(--gold);">
+                                        <span class="opt-title">الأسطى علي</span>
+                                        <span class="opt-price" style="font-size:0.8rem; color:#888;">حلاقة
+                                            كلاسيك</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="wizard-btns">
+                                <button type="button" class="btn btn-outline prev-step">السابق</button>
+                                <button type="button" class="btn btn-gold next-step">التالي</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 (Services) -->
+                        <div class="wizard-step" id="step3">
+                            <h3>اختر الخدمات</h3>
+                            <div class="services-select-grid">
+                                <label class="service-option-card">
+                                    <input type="checkbox" name="service" value="haircut">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <span class="opt-icon">✂️</span>
+                                        <span class="opt-title">قص شعر</span>
+                                        <span class="opt-price">80 ج.م</span>
+                                    </div>
+                                </label>
+                                <label class="service-option-card">
+                                    <input type="checkbox" name="service" value="beard">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <span class="opt-icon">🪒</span>
+                                        <span class="opt-title">حلاقة ذقن</span>
+                                        <span class="opt-price">60 ج.م</span>
+                                    </div>
+                                </label>
+                                <label class="service-option-card">
+                                    <input type="checkbox" name="service" value="mask">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <span class="opt-icon">🧖</span>
+                                        <span class="opt-title">ماسك وجه</span>
+                                        <span class="opt-price">100 ج.م</span>
+                                    </div>
+                                </label>
+                                <label class="service-option-card">
+                                    <input type="checkbox" name="service" value="vip">
+                                    <span class="check-mark"></span>
+                                    <div class="opt-content">
+                                        <span class="opt-icon">👑</span>
+                                        <span class="opt-title">باقة VIP</span>
+                                        <span class="opt-price">250 ج.م</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="wizard-btns">
+                                <button type="button" class="btn btn-outline prev-step">السابق</button>
+                                <button type="button" class="btn btn-gold next-step">التالي</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="wizard-step" id="step4">
+                            <h3>تأكيد الموعد</h3>
+                            <div class="form-group">
+                                <label>التاريخ</label>
+                                <input type="date" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>الوقت</label>
+                                <div class="time-grid">
+                                    <button type="button" class="time-slot">10:00 AM</button>
+                                    <button type="button" class="time-slot">11:00 AM</button>
+                                    <button type="button" class="time-slot">12:00 PM</button>
+                                    <button type="button" class="time-slot">01:00 PM</button>
+                                    <button type="button" class="time-slot">04:00 PM</button>
+                                    <button type="button" class="time-slot">08:00 PM</button>
+                                </div>
+                            </div>
+                            <div class="wizard-btns">
+                                <button type="button" class="btn btn-outline prev-step">السابق</button>
+                                <button type="submit" class="btn btn-gold">تأكيد الحجز</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>صالون المحترف</h3>
+                <p>وجهتك الأولى للأناقة والفخامة في الصالحية الجديدة.</p>
+                <div class="socials">
+                    <a href="#">FB</a>
+                    <a href="#">IG</a>
+                    <a href="#">WA</a>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h4>تواصل معنا</h4>
+                <p>📍 الصالحية الجديدة، الشرقية</p>
+                <p>📞 01xxxxxxxxx</p>
+            </div>
+            <div class="footer-hours">
+                <h4>ساعات العمل</h4>
+                <p>يومياً: 10 ص - 11 م</p>
+                <p>الجمعة: 2 م - 11 م</p>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 صالون المحترف. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
