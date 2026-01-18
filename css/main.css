@@ -8,7 +8,8 @@
     --glass-border: 1px solid rgba(255, 255, 255, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     --text-color: #f0f0f0;
-    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* bouncy */
+    --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* bouncy */
 }
 
 * {
@@ -51,8 +52,13 @@ body {
 }
 
 @keyframes cut {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(-20deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-20deg);
+    }
 }
 
 /* --- Utilities --- */
@@ -149,7 +155,8 @@ body {
     transition: width 0.3s;
 }
 
-.nav-link:hover::after, .nav-link.active::after {
+.nav-link:hover::after,
+.nav-link.active::after {
     width: 100%;
 }
 
@@ -190,7 +197,8 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.1); /* for parallax feel */
+    transform: scale(1.1);
+    /* for parallax feel */
 }
 
 .hero-overlay {
@@ -269,9 +277,17 @@ body {
 
 /* Floating Animation */
 @keyframes float {
-    0% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(5deg); }
-    100% { transform: translateY(0px) rotate(0deg); }
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
 }
 
 .floating {
@@ -290,7 +306,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5));
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
     animation: float 8s ease-in-out infinite;
 }
 
@@ -325,9 +341,11 @@ body {
     padding: 30px;
     border-radius: 20px;
     text-align: center;
-    transform-style: preserve-3d; /* Key for 3D tilt */
+    transform-style: preserve-3d;
+    /* Key for 3D tilt */
     transform: perspective(1000px);
-    transition: transform 0.1s; /* Important for smoot tilt */
+    transition: transform 0.1s;
+    /* Important for smoot tilt */
     position: relative;
     overflow: hidden;
 }
@@ -335,15 +353,19 @@ body {
 .glass-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(180deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.05) 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(212, 175, 55, 0) 0%, rgba(212, 175, 55, 0.05) 100%);
     z-index: -1;
 }
 
 .card-icon {
     font-size: 3rem;
     margin-bottom: 20px;
-    transform: translateZ(20px); /* Pop out 3D */
+    transform: translateZ(20px);
+    /* Pop out 3D */
     display: inline-block;
 }
 
@@ -417,7 +439,7 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
     padding: 20px;
     transform: translateY(100%);
     transition: 0.3s;
@@ -435,7 +457,10 @@ body {
 
 .booking-bg {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 100%);
     z-index: 0;
 }
@@ -444,18 +469,18 @@ body {
     position: relative;
     z-index: 1;
     background: rgba(30, 30, 30, 0.6);
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
 .wizard-progress {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 20px;
 }
 
@@ -478,14 +503,21 @@ body {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .form-control {
     width: 100%;
     padding: 15px;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid #333;
     border-radius: 10px;
     color: white;
@@ -507,8 +539,8 @@ body {
 }
 
 .service-option-card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
     cursor: pointer;
@@ -522,15 +554,18 @@ body {
     opacity: 0;
 }
 
-.service-option-card:hover, .service-option-card input:checked ~ .opt-content {
+.service-option-card:hover,
+.service-option-card input:checked~.opt-content {
     border-color: var(--gold);
     background: rgba(212, 175, 55, 0.1);
 }
 
-.service-option-card input:checked + .check-mark {
+.service-option-card input:checked+.check-mark {
     position: absolute;
-    top: 10px; right: 10px;
-    width: 15px; height: 15px;
+    top: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
     background: var(--gold);
     border-radius: 50%;
     box-shadow: 0 0 10px var(--gold);
@@ -543,8 +578,14 @@ body {
     gap: 10px;
 }
 
-.opt-icon { font-size: 2rem; }
-.opt-price { color: var(--gold); font-weight: bold; }
+.opt-icon {
+    font-size: 2rem;
+}
+
+.opt-price {
+    color: var(--gold);
+    font-weight: bold;
+}
 
 /* Time Slots */
 .time-grid {
@@ -563,7 +604,8 @@ body {
     transition: 0.3s;
 }
 
-.time-slot:hover, .time-slot.selected {
+.time-slot:hover,
+.time-slot.selected {
     background: var(--gold);
     color: black;
 }
@@ -589,7 +631,8 @@ body {
 }
 
 .socials a {
-    width: 40px; height: 40px;
+    width: 40px;
+    height: 40px;
     background: #222;
     display: flex;
     align-items: center;
@@ -615,9 +658,37 @@ body {
 /* --- Responsive --- */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; /* Mobile menu implementation needed later or just stack */
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        backdrop-filter: blur(15px);
+        padding: 20px 0;
+        border-bottom: 2px solid var(--gold);
+        gap: 20px;
+        z-index: 1000;
+        animation: slideDown 0.3s ease forwards;
     }
-    
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     .mobile-toggle {
         display: block;
     }
@@ -636,6 +707,7 @@ body {
     }
 
     .floating-tool {
-        display: none; /* Hide complex 3D on small screens to save space */
+        display: none;
+        /* Hide complex 3D on small screens to save space */
     }
 }

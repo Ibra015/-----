@@ -149,8 +149,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.mobile-toggle');
     if (toggle) {
         toggle.addEventListener('click', () => {
-            // Simple toggle implementation
-            alert('Menu toggled (implement expansion logic)');
+            // Toggle Menu
+            const navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('active');
+
+            // Toggle Icon Animation (Optional)
+            toggle.classList.toggle('active');
         });
+    }
+
+    // Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('SW registered!', reg))
+            .catch(err => console.log('SW failed', err));
     }
 });
